@@ -12,8 +12,11 @@ inputs:
 outputs:
   - id: out
     type: File
+    secondaryFiles:
+      - $(self.basename)
     outputBinding:
       glob: out
+      addMetadata: $(inputs.input.metadata)
 requirements:
   - class: DockerRequirement
     dockerPull: 'ubuntu:16.04'
