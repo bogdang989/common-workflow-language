@@ -1599,3 +1599,16 @@
     inputs are not present in the input object used to run the tool.
   should_fail: true
   tags: [ required, workflow ]
+
+- job: v1.0/stage-array-job.json
+  tool: v1.0/stage-array.cwl
+  doc: |
+    Test if array input is staged when set in InitialWorkDirRequirement.
+  output:
+    output: {
+        "checksum": "sha1$bf757d2cf23320f3321761286c0d0deea446acf2", 
+        "location": "out.tar", 
+        "class": "File", 
+        "size": 10240
+    }
+  tags: [ resource, command_line_tool ]
